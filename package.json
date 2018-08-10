@@ -1,0 +1,22 @@
+{
+  "name": "word-game-cons",
+  "version": "1.0.0",
+  "description": "guess-the-letters word game CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unctarheel87/word-game-cons.git"
+  },
+  "author": "John Tillman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unctarheel87/word-game-cons/issues"
+  },
+  "homepage": "https://github.com/unctarheel87/word-game-cons#readme",
+  "dependencies": {
+    "inquirer": "^6.1.0"
+  }
+}
