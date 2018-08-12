@@ -1,4 +1,4 @@
-module.exports = function (char) {
+var Letter = function (char) {
   this.char = char,
   this.hasGuessed = false,
   this.replaceLetter = function() {
@@ -13,3 +13,5 @@ module.exports = function (char) {
     }
   }
 };
+
+module.exports = Letter;

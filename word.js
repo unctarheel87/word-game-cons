@@ -1,13 +1,24 @@
 const Letter = require('./letter');
 
-function Word(word) {
-  let wordCons = []
+const Word = function (word) {
+  const letterObjArr = [];
   for(let letter of word) {
     const letterObj = new Letter(letter);
-    wordCons.push(letterObj);
+    letterObjArr.push(letterObj);
   }
-  this.word = wordCons;
-}
+  this.letters = letterObjArr,
+  this.toString = function() {
+    let word = '';
+    for(let letter of this.letters) {
+      word += letter.char;
+    }
+    return word;
+  },
+  this.guessLetter = function(charGuess) {
+    for(let letter of this.letters) {
+      letter.checkLetter(charGuess);
+    }
+  }
+};
 
-const hello = new Word('hello');
-console.log(hello.word);
+module.exports = Word;
