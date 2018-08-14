@@ -2,14 +2,16 @@ var Letter = function (char) {
   this.char = char,
   this.hasGuessed = false,
   this.replaceLetter = function() {
-    if(hasGuessed) {
+    if(this.hasGuessed) {
       return this.char;
     }
-    return '_'
+    return '_';
   },
   this.checkLetter = function(charGuess) {
     if(charGuess === this.char) {
-      this.hasGuessed === true;
+      this.hasGuessed = true;
+    } else {
+      console.log("Sorry. Try Again!")
     }
   }
 };

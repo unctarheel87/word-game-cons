@@ -10,7 +10,7 @@ const Word = function (word) {
   this.toString = function() {
     let word = '';
     for(let letter of this.letters) {
-      word += letter.char;
+      word += letter.replaceLetter();
     }
     return word;
   },
@@ -19,6 +19,7 @@ const Word = function (word) {
       letter.checkLetter(charGuess);
     }
   }
+
 };
 
 module.exports = Word;
