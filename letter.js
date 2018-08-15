@@ -1,6 +1,7 @@
 var Letter = function (char) {
   this.char = char,
   this.hasGuessed = false,
+
   this.replaceLetter = function() {
     if(this.hasGuessed) {
       return this.char;
@@ -10,8 +11,6 @@ var Letter = function (char) {
   this.checkLetter = function(charGuess) {
     if(charGuess === this.char) {
       this.hasGuessed = true;
-    } else {
-      console.log("Sorry. Try Again!")
     }
   }
 };
