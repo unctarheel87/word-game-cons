@@ -8,7 +8,7 @@ var Letter = function (char) {
     return '_';
   };
   this.checkLetter = function(charGuess) {
-    if(charGuess === this.char.toLowerCase()) {
+    if(charGuess.toLowerCase() === this.char.toLowerCase()) {
       this.hasGuessed = true;
     }
   };
