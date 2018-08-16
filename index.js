@@ -20,7 +20,6 @@ const runGame = function() {
     console.log('\nYou Won! - Next Word -\n');
     initGame();
   } else if(count < 10) {
-    console.log(count)
     inquirer
       .prompt([
         {
