@@ -29,7 +29,7 @@ const runGame = function() {
         }
       ])
       .then(function(answer) {
-        currentWord.guessLetter(answer.letter);
+        currentWord.guessLetter(answer.letter.toLowerCase());
         count = currentWord.wrongLetterCount;
         console.log(currentWord.toString() + "\n");
         runGame();
