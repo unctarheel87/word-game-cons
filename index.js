@@ -1,15 +1,17 @@
 const inquirer = require('inquirer');
 const Word = require('./Word');
 
-const wordBank = ['hello', 'thanks', 'whatsup'];
+const wordBank = ['Jurassic Park', 'Titanic', 'Braveheart', 'The Lord of the Rings', 'Avengers', 'Catch Me If You Can', 'Saving Private Ryan', 'Cast Away', 'The Hangover', 'Wedding Crashers'];
 let count = 0;
+let randWord = '';
 let currentWord = '';
 
 function initGame() {
   const randIndex = Math.floor(Math.random() * wordBank.length);
-  currentWord = new Word(wordBank[randIndex]);
+  randWord = wordBank[randIndex];
+  currentWord = new Word(randWord);
   count = 0;
-  console.log(currentWord.toString());
+  console.log("\n" + currentWord.toString() + "\n");
   runGame();
 }
 
@@ -18,6 +20,7 @@ const runGame = function() {
     console.log('\n--- You Won! --- New Word ----\n');
     initGame();
   } else if(count < 10) {
+    console.log(count)
     inquirer
       .prompt([
         {
@@ -27,13 +30,13 @@ const runGame = function() {
       ])
       .then(function(answer) {
         currentWord.guessLetter(answer.letter);
-        console.log(currentWord.toString());
-        count++;
+        count = currentWord.wrongLetterCount;
+        console.log(currentWord.toString() + "\n");
         runGame();
       });
   } else {
-    console.log(`Sorry Game Over... The correct word was ${currentWord}`);
-    console.log('\n--- You Lost... --- New Word ----\n')
+    console.log(`Sorry Game Over... The correct word was ${randWord}`);
+    console.log('\n--- New Word ----\n')
     initGame();
   }
 };   
