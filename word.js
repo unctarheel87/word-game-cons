@@ -9,6 +9,7 @@ const Word = function (word) {
     letterObjArr.push(letterObj);
   };
   this.letters = letterObjArr;
+  this.wrongLetters = [];
   this.wrongLetterCount = 0;
   this.toString = function() {
     let word = '';
@@ -21,10 +22,13 @@ const Word = function (word) {
     for(let letter of this.letters) {
       letter.checkLetter(charGuess);
     };
-    if(word.toLowerCase().indexOf(charGuess) === -1) {
+    if(word.toLowerCase().indexOf(charGuess) === -1 && !this.wrongLetters.includes(charGuess)) {
       console.log("\n" + red, "INCORRECT!\n");
+      this.wrongLetters.push(charGuess);
       this.wrongLetterCount++;
       console.log(10 - this.wrongLetterCount + " guesses left!\n")
+    } else if(this.wrongLetters.includes(charGuess)) {
+      console.log("Already guessed...guess again\n");
     } else {
       console.log("\n" + green, "CORRECT!\n");
     }

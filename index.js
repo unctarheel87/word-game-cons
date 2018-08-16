@@ -17,7 +17,7 @@ function initGame() {
 
 const runGame = function() {
   if(currentWord.roundOver) {
-    console.log('\n--- You Won! --- New Word ----\n');
+    console.log('\nYou Won! - Next Word -\n');
     initGame();
   } else if(count < 10) {
     console.log(count)
@@ -35,8 +35,7 @@ const runGame = function() {
         runGame();
       });
   } else {
-    console.log(`Sorry Game Over... The correct word was ${randWord}`);
-    console.log('\n--- New Word ----\n')
+    console.log(`You lost... The correct word was ${randWord} - Next Word\n`);
     initGame();
   }
 };   
