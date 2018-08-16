@@ -26,7 +26,7 @@ const Word = function (word) {
       console.log("\n" + red, "INCORRECT!\n");
       this.pickedLetters.push(charGuess);
       this.wrongLetterCount++;
-      console.log(10 - this.wrongLetterCount + " guesses left!\n")
+      console.log(10 - this.wrongLetterCount + " guesses left.\n")
     } else if(this.pickedLetters.includes(charGuess)) {
       console.log("Already guessed...guess again\n");
     } else {
