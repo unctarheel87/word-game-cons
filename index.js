@@ -29,9 +29,13 @@ const runGame = function() {
         }
       ])
       .then(function(answer) {
-        currentWord.guessLetter(answer.letter.toLowerCase());
-        count = currentWord.wrongLetterCount;
-        console.log(currentWord.toString() + "\n");
+        if(answer.letter.length > 1 || answer.letter === '') {
+          console.log('not a valid character...')
+        } else {  
+          currentWord.guessLetter(answer.letter.toLowerCase());
+          count = currentWord.wrongLetterCount;
+          console.log(currentWord.toString() + "\n");
+        }
         runGame();
       });
   } else {
