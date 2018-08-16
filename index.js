@@ -29,7 +29,8 @@ const runGame = function() {
       ])
       .then(function(answer) {
         if(answer.letter.length > 1 || answer.letter === '') {
-          console.log('not a valid character...')
+          console.log('not a valid character...\n')
+          console.log(currentWord.toString() + "\n");
         } else {  
           currentWord.guessLetter(answer.letter.toLowerCase());
           count = currentWord.wrongLetterCount;
