@@ -19,7 +19,7 @@ const runGame = function() {
   if(currentWord.roundOver) {
     console.log('\nYou Won! - Next Word -\n');
     initGame();
-  } else if(count < 10) {
+  } else if(count <= 10) {
     inquirer
       .prompt([
         {
